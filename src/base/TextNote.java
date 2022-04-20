@@ -24,6 +24,7 @@ public class TextNote extends Note {
 		this.content = content;
 	}
 	
+	
 	public TextNote(File f) {
 		super(f.getName());
 		this.content = getTextFromFile(f.getAbsolutePath());
@@ -31,6 +32,10 @@ public class TextNote extends Note {
 	
 	public String getContent() {
 		return this.content;
+	}
+	
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 	private String getTextFromFile(String absolutePath) {

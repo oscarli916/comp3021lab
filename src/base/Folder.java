@@ -74,7 +74,7 @@ public class Folder implements Comparable<Folder>, Serializable {
 	public List<Note> searchNotes(String keywords){
 		ArrayList<Note> result = new ArrayList<Note>();
 		String[] tempKeywords = keywords.split(" ");
-	
+		
 		ArrayList<ArrayList<String>> searchKeywords = new ArrayList<ArrayList<String>>();
 		for (int i=0; i<tempKeywords.length; i++) {
 			if (tempKeywords[i].toLowerCase().equals("or")) {
@@ -160,6 +160,16 @@ public class Folder implements Comparable<Folder>, Serializable {
 		}
 		
 		return result;
+	}
+	
+	public boolean removeNotes(String title) {
+		for (int i=0; i<notes.size(); i++) {
+			if(notes.get(i).getTitle().equals(title)) {
+				notes.remove(i);
+				break;
+			}
+		}
+		return true;
 	}
 	
 }
